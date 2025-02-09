@@ -1,11 +1,76 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import Badge from "../components/Badge.astro";
+import Experience from "../components/Experience.astro";
+import Projects from "../components/Projects.astro";
+import SectionContainer from "../components/SectionContainer.astro";
+import SocialPill from "../components/SocialPill.astro";
+import BriefcaseIcon from "../incons/Briefcase.astro";
+import CodeIcon from "../incons/Code.astro";
+import GitHubIcon from "../incons/GitHub.astro";
+import LinkedInIcon from "../incons/LinkedIn.astro";
+import MailIcon from "../incons/Mail.astro";
+import Layout from "../layouts/Layout.astro";
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
-<Layout>
-	<Welcome />
+<Layout
+  title="Santiago Barragan's Portfolio - Web Developer"
+  description="Hire Santiago to create your web application. Web developer, specialized in creating unique applications."
+>
+  <main class="px-4">
+    <SectionContainer class="py-24 lg:py-32 pb-32">
+      <img
+        class="rounded-full size-12 mb-4"
+        src="https://media.licdn.com/dms/image/v2/D4E03AQHppmBQGYf8dg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1719285975742?e=1744243200&v=beta&t=E9XS-u8XMAk3SRyAdB6QVLJE2wguk2nzwnchweXwSzA"
+        alt="sbr photo"
+      />
+      <h1
+        class="text-white text-3xl md:text-4xl lg:text-5xl font-bold flex flex-row gap-x-4 pb-6 lg:pb-10"
+      >
+        Hey, I'm Santiago <a
+          href="https://www.linkedin.com/in/santiago-barragan-real/"
+          target="_blank"
+          rel="noopener"
+          class="flex justify-center items-center"
+          ><Badge>Available for hire</Badge></a
+        >
+      </h1>
+      <h2 class="text-xl lg:text-2xl opacity-80 text-wrap max-w-[700px]">
+        Self-taught full-stack developer with a passion for building efficient,
+        scalable, and user-friendly web applications. Always learning and
+        exploring new technologies to enhance both frontend and backend
+        development.
+      </h2>
+
+      <nav class="flex gap-4 mt-8 flex-wrap">
+        <SocialPill href="https://www.linkedin.com/in/santiago-barragan-real/">
+          <LinkedInIcon class="size-4 md:size-6" />LinkedIn
+        </SocialPill>
+        <SocialPill href="https://github.com/Santiagobr44">
+          <GitHubIcon class="size-4 md:size-6" />GitHub
+        </SocialPill>
+        <SocialPill href="mailto:santiagobr.44@gmail.com">
+          <MailIcon class="size-4 md:size-6" />santiagobr.44@gmail.com
+        </SocialPill>
+      </nav>
+    </SectionContainer>
+
+    <SectionContainer id="experience">
+      <h2 class="text-3xl font-semibold mb-6 flex gap-x-2 items-center">
+        <BriefcaseIcon class="size-6" />
+        Experience
+      </h2>
+      <Experience />
+    </SectionContainer>
+
+    <SectionContainer id="projects">
+      <h2 class="text-xl font-semibold mb-6 flex gap-x-2 items-center">
+        <CodeIcon class="size-6" />
+        Projects
+      </h2>
+      <Projects />
+    </SectionContainer>
+  </main>
 </Layout>
