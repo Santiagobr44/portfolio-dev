@@ -1,0 +1,35 @@
+---
+import GitHubIcon from "../incons/GitHub.astro";
+import LinkedInIcon from "../incons/LinkedIn.astro";
+import MailIcon from "../incons/Mail.astro";
+import SocialPill from "./SocialPill.astro";
+---
+
+<div class="mb-32">
+  <h2 class="text-3xl font-semibold mb-6 flex gap-x-2 items-center">
+    <MailIcon class="size-6" />
+    Contact
+  </h2>
+
+  <p class="text-lg text-gray-800 dark:text-white/80 mb-6">
+    If you would like to discuss a project, collaborate, or simply connect,
+    please feel free to reach out. I am available for new opportunities and
+    would be happy to explore potential collaborations.
+  </p>
+
+  <p class="text-lg text-gray-800 dark:text-white/80 mb-6">
+    You can contact me via email or connect with me on professional networks:
+  </p>
+
+  <nav class="flex gap-4 flex-wrap">
+    <SocialPill href="mailto:santiagobr.44@gmail.com">
+      <MailIcon class="size-4 md:size-6" /> santiagobr.44@gmail.com
+    </SocialPill>
+    <SocialPill href="https://www.linkedin.com/in/santiago-barragan-real/">
+      <LinkedInIcon class="size-4 md:size-6" /> LinkedIn
+    </SocialPill>
+    <SocialPill href="https://github.com/Santiagobr44">
+      <GitHubIcon class="size-4 md:size-6" /> GitHub
+    </SocialPill>
+  </nav>
+</div>

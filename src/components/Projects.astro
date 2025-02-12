@@ -1,62 +1,41 @@
 ---
-import ReactIcon from "../incons/React.astro";
-import ZustandIcon from "../incons/Zustand.astro";
-
-const TAGS = {
-  REACT: {
-    name: "React",
-    class: "bg-black text-white",
-    icon: ReactIcon,
-  },
-  ZUSTAND: {
-    name: "Zustand",
-    class: "bg-black text-white",
-    icon: ZustandIcon,
-  },
-};
-const PROJECTS = [
-  {
-    title: "JavaScript Quiz",
-    description:
-      "Created for learning purposes, this quiz is a simple web application that tests your knowledge of JavaScript.",
-    link: "#",
-    github: "#",
-    image: "/public/projects/jsquiz.webp",
-    tags: [TAGS.REACT, TAGS.ZUSTAND],
-  },
-  // {
-  //   title: "Project 2",
-  //   description: "This is a description of project 2",
-  //   link: "#",
-  //   github: "#",
-  //   image: "https://via.placeholder.com/150",
-  //   tags: ["tag1", "tag2"],
-  // },
-];
+import { PROJECTS } from "../lib/projects.ts";
 ---
 
-{
-  PROJECTS.map(({ title, description, tags, image }) => (
-    <article>
-      <h3 class="text-2xl font-semibold mb-2">{title}</h3>
-      <p class="text-lg mb-4 text-pretty">{description}</p>
-      <ul class="flex gap-x-2 flex-row mb-4">
-        {tags.map((tag) => (
-          <li>
-            <span
-              class={`flex gap-x-2 rounded-full text-sm items-center ${tag.class} py-1 px-2`}
-            >
-              <tag.icon class="size-4" />
-              {tag.name}
-            </span>
-          </li>
-        ))}
-      </ul>
-      <img
-        class="rounded shadow-2xl shadow-white/10"
-        src={image}
-        alt={`Screenshot of the project ${image}`}
-      />
-    </article>
-  ))
-}
+<section class="space-y-12 mb-32">
+  {
+    PROJECTS.map(({ title, description, image, tags }) => (
+      <article class="relative overflow-hidden rounded-2xl bg-white dark:bg-neutral-900 shadow-lg hover:shadow-xl transition-all duration-300">
+        <a href="#" target="_blank" rel="noopener noreferrer" class="block">
+          <img
+            src={image}
+            alt={`Screenshot of the project ${title}`}
+            class="w-full h-56 object-cover rounded-t-2xl transition-transform duration-300 hover:scale-105"
+          />
+        </a>
+        <div class="p-6">
+          <h3 class="text-2xl font-semibold text-gray-900 dark:text-white">
+            {title}
+          </h3>
+          <p class="text-lg text-gray-600 dark:text-gray-400 mt-2">
+            {description}
+          </p>
+          <ul class="flex gap-2 mt-4 flex-wrap">
+            {tags.map((tag) => (
+              <li>
+                {tag && (
+                  <span
+                    class={`border border-black/20 dark:border-white/20 flex gap-x-2 rounded-full text-sm items-center ${tag.class} py-1 px-2`}
+                  >
+                    {tag.icon && <tag.icon class="size-4" />}
+                    {tag.name}
+                  </span>
+                )}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </article>
+    ))
+  }
+</section>

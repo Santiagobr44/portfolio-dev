@@ -1,0 +1,8 @@
+{
+  "title": "JavaScript Quiz",
+  "description": "Created for learning purposes, this quiz is a simple web application that tests your knowledge of JavaScript.",
+  "link": "#",
+  "github": "#",
+  "image": "/projects/jsquiz.webp",
+  "tags": ["react", "zustand"]
+}

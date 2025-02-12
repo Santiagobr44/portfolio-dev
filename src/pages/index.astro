@@ -1,18 +1,15 @@
 ---
+import About from "../components/About.astro";
 import Badge from "../components/Badge.astro";
-import Experience from "../components/Experience.astro";
+import Contact from "../components/Contact.astro";
 import Projects from "../components/Projects.astro";
 import SectionContainer from "../components/SectionContainer.astro";
 import SocialPill from "../components/SocialPill.astro";
-import BriefcaseIcon from "../incons/Briefcase.astro";
 import CodeIcon from "../incons/Code.astro";
 import GitHubIcon from "../incons/GitHub.astro";
 import LinkedInIcon from "../incons/LinkedIn.astro";
 import MailIcon from "../incons/Mail.astro";
 import Layout from "../layouts/Layout.astro";
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
 <Layout
@@ -27,7 +24,7 @@ import Layout from "../layouts/Layout.astro";
         alt="sbr photo"
       />
       <h1
-        class="text-white text-3xl md:text-4xl lg:text-5xl font-bold flex flex-row gap-x-4 pb-6 lg:pb-10"
+        class="text-black dark:text-white text-3xl md:text-4xl lg:text-5xl font-bold flex flex-row gap-x-4 pb-6 lg:pb-10"
       >
         Hey, I'm Santiago <a
           href="https://www.linkedin.com/in/santiago-barragan-real/"
@@ -57,20 +54,24 @@ import Layout from "../layouts/Layout.astro";
       </nav>
     </SectionContainer>
 
-    <SectionContainer id="experience">
+    <!-- <SectionContainer id="experience">
       <h2 class="text-3xl font-semibold mb-6 flex gap-x-2 items-center">
         <BriefcaseIcon class="size-6" />
         Experience
       </h2>
       <Experience />
-    </SectionContainer>
+    </SectionContainer> -->
 
     <SectionContainer id="projects">
-      <h2 class="text-xl font-semibold mb-6 flex gap-x-2 items-center">
+      <h2 class="text-3xl font-semibold mb-8 flex gap-x-2 items-center">
         <CodeIcon class="size-6" />
         Projects
       </h2>
       <Projects />
     </SectionContainer>
+
+    <SectionContainer id="about"> <About /></SectionContainer>
+
+    <SectionContainer id="contact"> <Contact /></SectionContainer>
   </main>
 </Layout>

@@ -24,39 +24,38 @@ const { description, title } = Astro.props;
     <title>{title}</title>
   </head>
 
-  <body>
+  <body class="relative">
     <div
-      class="absolute top-0 z-[-2] h-screen w-screen bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"
+      class="absolute top-0 z-[-2] h-screen w-screen dark:block hidden bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"
+    >
+    </div>
+    <div
+      class="absolute top-0 z-[-2] h-screen w-screen dark:hidden block bg-white bg-[radial-gradient(100%_50%_at_50%_0%,rgba(0,163,255,0.13)_0,rgba(0,163,255,0)_50%,rgba(0,163,255,0)_100%)]"
     >
     </div>
     <Header />
     <slot />
     <Footer />
+
+    <style is:global>
+      :root {
+        color-scheme: light dark;
+      }
+      html {
+        font-family: "Onest", sans-serif;
+        scroll-behavior: smooth;
+      }
+      body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+      }
+    </style>
   </body>
 </html>
-
-<style is:global>
-  :root {
-    color-scheme: light dark;
-  }
-  html {
-    font-family: "Onest", sans-serif;
-    scroll-behavior: smooth;
-  }
-  body {
-    background: #050505;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-
-    /* margin: 0;
-		width: 100%;
-		height: 100%; */
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    html {
-      scroll-behavior: auto;
-    }
-  }
-</style>
